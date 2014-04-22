@@ -1,0 +1,40 @@
+apply plugin: 'groovy'
+apply plugin: 'maven-publish'
+apply plugin: 'bintray'
+
+group = 'io.cristian'
+version = '1.0'
+
+dependencies {
+  compile localGroovy()
+  compile gradleApi()
+}
+
+task sourceJar(type: Jar) {
+  from sourceSets.main.allJava
+}
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+
+      artifact sourceJar {
+        classifier "sources"
+      }
+    }
+  }
+}
+
+bintray {
+  user = 'casidiablo'
+  key = bitrayApiKey
+  publications = ['mavenJava']
+  pkg {
+    repo = 'android'
+    name = 'gradle-android-aspectj'
+    licenses = ['Apache 2.0']
+  }
+}
+
+tasks.bintrayUpload.dependsOn tasks.publishToMavenLocal

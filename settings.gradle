@@ -1,1 +1,2 @@
-rootProject.name = 'gradle-aspectj'
+include ':gradle-android-aspectj', ':example'
+rootProject.name = 'gradle-android-aspectj'

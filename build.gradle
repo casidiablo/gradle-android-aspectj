@@ -1,36 +1,17 @@
-apply plugin: 'groovy'
-apply plugin: 'maven-publish'
-
-group = 'nl.eveoh'
-version = '1.5'
-
-repositories {
-    maven {
-        url "https://maven.eveoh.nl/content/groups/public"
-    }
-}
-
-dependencies {
-    compile localGroovy()
-    compile gradleApi()
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
+subprojects {
+  buildscript {
     repositories {
-        maven {
-            url "https://maven.eveoh.nl/content/repositories/releases"
-            if (project.hasProperty('mavenUser')) {
-                credentials {
-                    username mavenUser
-                    password mavenPass
-                }
-            }
-        }
+      jcenter()
+      mavenCentral()
     }
+
+    dependencies {
+      classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:0.3'
+      classpath 'com.android.tools.build:gradle:0.9.+'
+    }
+  }
 }
 
+task wrapper(type: Wrapper) {
+  gradleVersion = '1.11'
+}
