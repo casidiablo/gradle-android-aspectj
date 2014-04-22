@@ -22,7 +22,7 @@ project {
 }
 
 apply plugin: 'android'
-apply plugin: 'aspectj'
+apply plugin: 'android-aspectj'
 ```
 
 Use the `aspectPath` or `ajInpath` to specify external aspects or external code to weave, e.g.:

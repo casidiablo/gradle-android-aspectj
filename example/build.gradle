@@ -6,7 +6,7 @@ buildscript {
 
   dependencies {
     classpath 'com.android.tools.build:gradle:0.9.+'
-    classpath 'io.cristian:gradle-android-aspectj:1.1'
+    classpath 'io.cristian:gradle-android-aspectj:1.2'
   }
 }
 
@@ -19,7 +19,7 @@ project.ext {
 }
 
 apply plugin: 'android'
-apply plugin: 'aspectj'
+apply plugin: 'android-aspectj'
 
 android {
   compileSdkVersion 19
