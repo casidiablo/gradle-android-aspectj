@@ -28,6 +28,8 @@ class AndroidAjc extends DefaultTask {
     logger.info("=" * 30)
     logger.info("Running ajc ...")
     logger.info("classpath: $classpath.asPath")
+    logger.info("aspectPath: $aspectPath.asPath")
+    logger.info("inpath: $ajInpath.asPath")
 
     def iajcArgs = [classpath           : classpath.asPath,
                     destDir             : destinationDir,

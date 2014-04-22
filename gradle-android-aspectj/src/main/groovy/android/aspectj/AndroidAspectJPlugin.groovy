@@ -34,7 +34,7 @@ class AndroidAspectJPlugin implements Plugin<Project> {
       }
     }
 
-    for (configuration in ['aspectpath', 'ajInpath', 'testAspectpath', 'testAjInpath']) {
+    for (configuration in ['aspectPath', 'ajInpath']) {
       if (project.configurations.findByName(configuration) == null) {
         project.configurations.create(configuration)
       }
@@ -54,7 +54,7 @@ class AndroidAspectJPlugin implements Plugin<Project> {
           inputs.files(variant.javaCompile.source.sourceCollections)
           outputs.dir(destinationDir)
 
-          aspectPath = project.configurations.aspectpath
+          aspectPath = project.configurations.aspectPath
           ajInpath = project.configurations.ajInpath
         }
 

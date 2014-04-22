@@ -25,12 +25,11 @@ apply plugin: 'android'
 apply plugin: 'aspectj'
 ```
 
-Use the `aspectpath`, `ajInpath`, `testAspectpath` and `testAjInpath` to specify external aspects
-or external code to weave, e.g.:
+Use the `aspectPath` or `ajInpath` to specify external aspects or external code to weave, e.g.:
 
 ```groovy
 dependencies {
-    aspectpath "org.example:some-package:some-version"
+    aspectPath "org.example:some-package:some-version"
 }
 ```
 

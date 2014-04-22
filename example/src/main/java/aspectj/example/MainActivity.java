@@ -1,12 +1,13 @@
 package aspectj.example;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 
-public class MainActivity extends ActionBarActivity {
+import com.example.lib.ActivitySubClass;
+
+public class MainActivity extends ActivitySubClass {
 
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
+  public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     new Foo().doFoo(this, "alborosie");
   }
