@@ -13,7 +13,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'io.cristian:gradle-android-aspectj:1.1'
+        classpath 'io.cristian:gradle-android-aspectj:1.2'
     }
 }
 
